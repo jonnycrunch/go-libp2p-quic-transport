@@ -19,7 +19,7 @@ import (
 var quicConfig = &quic.Config{
 	MaxReceiveStreamFlowControlWindow:     3 * (1 << 20),   // 3 MB
 	MaxReceiveConnectionFlowControlWindow: 4.5 * (1 << 20), // 4.5 MB
-	Versions: []quic.VersionNumber{101},
+	Versions: []quic.VersionNumber{quic.VersionMilestone0_8_0},
 	AcceptCookie: func(clientAddr net.Addr, cookie *quic.Cookie) bool {
 		// TODO(#6): require source address validation when under load
 		return true
